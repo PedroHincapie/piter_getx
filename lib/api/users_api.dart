@@ -14,7 +14,7 @@ class UsersAPI {
 
   final _dio = Dio();
 
-  Future<List<User>> getUser(int page) async {
+  Future<List<User>> obtenerUsuarios(int page) async {
     try {
       final Response response = await this._dio.get(
         END_POINT,

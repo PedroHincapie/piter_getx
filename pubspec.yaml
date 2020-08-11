@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^0.1.3
   #Getx para el manejo de los estados de la aplicacion
   get: ^3.4.4
+  #Para el consumo http
+  dio: ^3.0.10
 
 dev_dependencies:
   flutter_test:

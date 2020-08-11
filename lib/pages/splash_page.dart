@@ -7,7 +7,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder(
       dispose: (_) {
-        print('Dispose');
+        print('Se elimina SplashPage');
       },
       init: SplashController(),
       builder: (_) => Scaffold(

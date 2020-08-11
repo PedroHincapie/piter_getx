@@ -17,6 +17,6 @@ class HomeController extends GetxController {
 
   void incrementarContador() {
     this._contador++;
-    update();
+    update(['text',]);
   }
 }

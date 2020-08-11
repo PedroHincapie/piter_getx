@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:piter_getx/controllers/home_controller.dart';
+import 'package:piter_getx/pages/home_page_widgets/home_label.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,16 +16,7 @@ class HomePage extends StatelessWidget {
     print('build home');
     return Scaffold(
       body: Center(
-        child: GetBuilder<HomeController>(
-          id: 'text',
-          builder: (_) => Text(
-            _.contador.toString(),
-            style: TextStyle(
-              fontSize: 50.0,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
+        child: HomeLabel(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

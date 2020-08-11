@@ -6,17 +6,11 @@ class SplashController extends GetxController {
   void onReady() {
     super.onReady();
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(
+      Get.off(
         HomePage(),
         transition: Transition.zoom,
-        duration: Duration(seconds: 2)
+        duration: Duration(seconds: 2),
       );
     });
-  }
-
-  @override
-  void onClose() {
-    // TODO: implement onClose
-    super.onClose();
   }
 }

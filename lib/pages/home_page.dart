@@ -15,11 +15,14 @@ class HomePage extends StatelessWidget {
     print('build home');
     return Scaffold(
       body: Center(
-        child: Text(
-          _.contador.toString(),
-          style: TextStyle(
-            fontSize: 50.0,
-            fontWeight: FontWeight.w600,
+        child: GetBuilder<HomeController>(
+          id: 'text',
+          builder: (_) => Text(
+            _.contador.toString(),
+            style: TextStyle(
+              fontSize: 50.0,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),

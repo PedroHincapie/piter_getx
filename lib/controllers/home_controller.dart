@@ -17,6 +17,14 @@ class HomeController extends GetxController {
 
   void incrementarContador() {
     this._contador++;
-    update(['text',]);
+    update([
+      'text',
+    ], _condicion());
   }
+
+  /*
+  Por medio de la presente condicion podremos controlar cuando se necesita o no haceer un
+  render del elemento id en la vista
+   */
+  bool _condicion() => _contador <= 10;
 }

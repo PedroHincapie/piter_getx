@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:piter_getx/controllers/profil_controller.dart';
@@ -24,10 +25,14 @@ class ProfilePage extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: TextField(
-                  obscureText: true,
+                  onChanged: _.capturarCambiosDelTexto,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    WhitelistingTextInputFormatter.digitsOnly
+                  ],
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Password',
+                    labelText: 'Edad',
                   ),
                 ),
               ),
@@ -37,8 +42,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 child: Text('Aceptar'),
                 elevation: 10.6,
-                animationDuration: Duration(milliseconds: 600),
-                onPressed: () {},
+                onPressed: _.validarEdad,
                 color: Colors.green,
               )
             ],

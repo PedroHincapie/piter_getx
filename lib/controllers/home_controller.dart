@@ -21,12 +21,17 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    this.cargarUsarios();
   }
 
   Future<void> cargarUsarios() async {
     final listaUsuarios = await UsersAPI.intancia.obtenerUsuarios(1);
     this._listaUsers = listaUsuarios;
     update(['users']);
+    this._listaUsuarios = listaUsuarios;
+    this._usuariosCargados = !this.usuariosCargados;
+
+    this.update(['users']);
   }
 
   void incrementarContador() {

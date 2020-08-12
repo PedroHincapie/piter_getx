@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:piter_getx/models/user.dart';
 
 const String END_POINT = 'https://reqres.in/api/users';

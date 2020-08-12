@@ -18,14 +18,18 @@ class UsersAPI {
     try {
       final Response response = await this._dio.get(
         END_POINT,
-        queryParameters: {'page': page},
+        queryParameters: {
+          'page': page,
+          'delay': 5,
+        },
       );
 
       return (response.data['data'] as List)
           .map((e) => User.fromJson(e))
           .toList();
     } on Exception catch (e) {
-      debugPrint('Error al consumir api $END_POINT');
+      debugPrint('Error al consumir api $END_POINT $e');
+      return [];
     }
   }
 }

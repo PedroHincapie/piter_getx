@@ -17,6 +17,7 @@ class HomeList extends StatelessWidget {
                   leading: Icon(Icons.person),
                   title: Text(user.firstName),
                   subtitle: Text(user.email),
+                  onTap: () => _.mostrarPerfilUsuario(user),
                 );
               },
               itemCount: _.listaUsuarios.length,

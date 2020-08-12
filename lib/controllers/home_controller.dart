@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:piter_getx/api/users_api.dart';
 import 'package:piter_getx/models/user.dart';
+import 'package:piter_getx/pages/profile_page.dart';
 
 class HomeController extends GetxController {
   int _contador = 0;
@@ -43,4 +44,11 @@ class HomeController extends GetxController {
   render del elemento id en la vista
    */
   bool _condicion() => _contador <= 10 || _contador >= 11;
+
+  mostrarPerfilUsuario(User user) {
+    Get.to(
+      ProfilePage(),
+      arguments: user,
+    );
+  }
 }

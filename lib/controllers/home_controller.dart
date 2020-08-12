@@ -4,12 +4,14 @@ import 'package:piter_getx/models/user.dart';
 
 class HomeController extends GetxController {
   int _contador = 0;
+  bool _usuariosCargados = true;
+  List<User> _listaUsuarios = [];
 
-  List<User> _listaUsers = [];
-
-  List<User> get listaUsers => _listaUsers;
+  List<User> get listaUsuarios => _listaUsuarios;
 
   int get contador => _contador;
+
+  bool get usuariosCargados => _usuariosCargados;
 
   @override
   void onInit() {

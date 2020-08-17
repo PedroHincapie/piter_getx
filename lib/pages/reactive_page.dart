@@ -11,20 +11,55 @@ class ReactivePage extends StatelessWidget {
         print('Reactive');
 
         return Scaffold(
-          body: Center(
-            child: Obx(
-              () => Text(
-                _.contador.value.toString(),
-                style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold),
-              ),
+          body: Container(
+            margin: EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Obx(
+                  () {
+                    debugPrint('Reactive 1');
+
+                    return Text(
+                      _.contador.value.toString(),
+                      style: TextStyle(
+                          fontSize: 40.0,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold),
+                    );
+                  },
+                ),
+                Obx(
+                  () {
+                    print('Reactive 2');
+
+                    return Text(
+                      _.fechaActual.value.toString(),
+                      style: TextStyle(
+                          fontSize: 26.0,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold),
+                    );
+                  },
+                )
+              ],
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: _.incrementar,
-            child: Icon(Icons.add),
+          floatingActionButton: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FloatingActionButton(
+                heroTag: 'Add',
+                onPressed: _.incrementar,
+                child: Icon(Icons.add),
+              ),
+              SizedBox(width: 20.0),
+              FloatingActionButton(
+                heroTag: 'Fecha Actual',
+                onPressed: _.obtenerFechaActual,
+                child: Icon(Icons.calendar_today),
+              )
+            ],
           ),
         );
       },

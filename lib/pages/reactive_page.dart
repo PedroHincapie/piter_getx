@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:piter_getx/controllers/reactive_controller.dart';
@@ -11,10 +12,10 @@ class ReactivePage extends StatelessWidget {
         print('Reactive');
 
         return Scaffold(
-          body: Container(
-            margin: EdgeInsets.all(20.0),
+          body: SafeArea(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              verticalDirection: VerticalDirection.down,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Obx(
                   () {
@@ -41,7 +42,26 @@ class ReactivePage extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     );
                   },
-                )
+                ),
+                Obx(() {
+                  debugPrint('Reactive 3');
+                  return ListView.builder(
+                    itemBuilder: (context, index) {
+                      final String text = _.listaString[index];
+                      return ListTile(
+                        title: Text(text),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            _.removerElementoLista(index);
+                          },
+                        ),
+                      );
+                    },
+                    itemCount: _.listaString.length,
+                    shrinkWrap: true,
+                  );
+                }),
               ],
             ),
           ),

@@ -46,7 +46,7 @@ class HomeController extends GetxController {
   bool _condicion() => _contador <= 10 || _contador >= 11;
 
   Future<void> mostrarPerfilUsuario(User user) async {
-    final resultado = await Get.to<String>(
+    final resultado = await Get.to<int>(
       ProfilePage(),
       arguments: user,
     );

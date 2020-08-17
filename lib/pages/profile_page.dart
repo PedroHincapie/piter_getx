@@ -20,7 +20,7 @@ class ProfilePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                '${_.obtenerUsuario.firstName}',
+                '${_.obtenerUsuario.firstName} ${_.obtenerUsuario.lastName}',
               ),
               Container(
                 margin: EdgeInsets.all(10.0),

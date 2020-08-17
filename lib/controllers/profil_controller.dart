@@ -26,7 +26,7 @@ class ProfilController extends GetxController {
       Get.dialog(
         AlertDialog(
           title: Text('Error edad no permitida'),
-          content: Text('Ingrese un valor válido'),
+          content: Text('Ingrese una edad válida'),
           actions: [
             FlatButton(
               onPressed: () {
